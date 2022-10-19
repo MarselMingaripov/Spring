@@ -1,6 +1,7 @@
 package com.example.demojr.service;
 
 import com.example.demojr.models.Client;
+import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
