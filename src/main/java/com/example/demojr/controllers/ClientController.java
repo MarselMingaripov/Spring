@@ -11,7 +11,8 @@ import java.util.List;
 
 @RestController
 public class ClientController {
-    private final ClientServiceImpl clientService;
+    @Autowired
+    private ClientServiceImpl clientService;
 
     @Autowired
     public ClientController(ClientServiceImpl clientService) {
@@ -26,7 +27,6 @@ public class ClientController {
     @GetMapping("/clients")
     public ResponseEntity<List<Client>>read(){
         final List<Client> clients = clientService.readAll();
-
         return clients != null && !clients.isEmpty() ?
                 new ResponseEntity<>(clients, HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
