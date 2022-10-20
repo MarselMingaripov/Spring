@@ -14,8 +14,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Service
 public class ClientServiceImpl implements ClientService{
 
-    @Autowired
+    final
     ClientsRepository clientsRepository;
+
+    public ClientServiceImpl(ClientsRepository clientsRepository) {
+        this.clientsRepository = clientsRepository;
+    }
+
     @Override
     public void create(Client client) {
     clientsRepository.save(client);
@@ -28,6 +33,7 @@ public class ClientServiceImpl implements ClientService{
 
     @Override
     public Client read(int id) {
+
         return clientsRepository.getOne(id);
     }
 

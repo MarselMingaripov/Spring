@@ -10,7 +10,7 @@ public class DemoJrApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(DemoJrApplication.class, args);
-        Client client = new Client("Mars", "sdjk@mail.ru", "98988");
+        //Client client = new Client("Mars", "sdjk@mail.ru", "98988");
     }
 
 }
